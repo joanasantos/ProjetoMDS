@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb21c17e46ec4d6d88cdb7f9318693a7" Name="Diagram1" >
+        <EntityTypeShape EntityType="HospitalDB.Paciente" Width="1.5" PointX="4.625" PointY="0.625" />
+        <EntityTypeShape EntityType="HospitalDB.Medico" Width="1.5" PointX="8.25" PointY="0.875" />
+        <EntityTypeShape EntityType="HospitalDB.Consulta" Width="1.5" PointX="4.625" PointY="3.125" />
+        <EntityTypeShape EntityType="HospitalDB.Medicamento" Width="1.5" PointX="4.625" PointY="6.625" />
+        <EntityTypeShape EntityType="HospitalDB.Diagnostico" Width="1.5" PointX="7.625" PointY="4.5" />
+        <EntityTypeShape EntityType="HospitalDB.Sintoma" Width="1.5" PointX="1.25" PointY="4.75" />
+        <AssociationConnector Association="HospitalDB.ConsultaMedicamento" />
+        <AssociationConnector Association="HospitalDB.ConsultaSintoma" />
+        <AssociationConnector Association="HospitalDB.ConsultaDiagnostico" />
+        <AssociationConnector Association="HospitalDB.PacienteConsulta" />
+        <AssociationConnector Association="HospitalDB.MedicoConsulta" />
+        <EntityTypeShape EntityType="HospitalDB.TipoSintoma" Width="1.5" PointX="1.25" PointY="7.875" />
+        <AssociationConnector Association="HospitalDB.TipoSintomaSintoma" />
+        <EntityTypeShape EntityType="HospitalDB.TipoMedicamento" Width="1.5" PointX="4.625" PointY="9.75" />
+        <EntityTypeShape EntityType="HospitalDB.TipoDiagnostico" Width="1.5" PointX="7.625" PointY="8.125" />
+        <AssociationConnector Association="HospitalDB.TipoDiagnosticoDiagnostico" />
+        <AssociationConnector Association="HospitalDB.TipoMedicamentoMedicamento" />
+        <EntityTypeShape EntityType="HospitalDB.Enfermeiro" Width="1.5" PointX="1.375" PointY="1.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
