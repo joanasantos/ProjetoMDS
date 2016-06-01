@@ -1,1 +1,15 @@
 C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\ProjetoMDS.exe.config
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\ProjetoMDS.exe
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\ProjetoMDS.pdb
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\EntityFramework.dll
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\EntityFramework.xml
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.csprojResolveAssemblyReference.cache
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.FormLogin.resources
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.FormNovaConsulta.resources
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.Properties.Resources.resources
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.csproj.GenerateResource.Cache
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.exe
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.pdb
+C:\Users\Joana\Desktop\ProjetoMDS\ProjetoMDS\obj\Debug\ProjetoMDS.FormSelecionarPaciente.resources

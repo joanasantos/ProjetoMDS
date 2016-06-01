@@ -4,18 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fb21c17e46ec4d6d88cdb7f9318693a7" Name="Diagram1" >
+      <Diagram DiagramId="fb21c17e46ec4d6d88cdb7f9318693a7" Name="Diagram1" ZoomLevel="86" >
         <EntityTypeShape EntityType="HospitalDB.Paciente" Width="1.5" PointX="4.625" PointY="0.625" />
-        <EntityTypeShape EntityType="HospitalDB.Medico" Width="1.5" PointX="8.25" PointY="0.875" />
+        <EntityTypeShape EntityType="HospitalDB.Medico" Width="1.5" PointX="7.875" PointY="1" />
         <EntityTypeShape EntityType="HospitalDB.Consulta" Width="1.5" PointX="4.625" PointY="3.125" />
-        <EntityTypeShape EntityType="HospitalDB.Medicamento" Width="1.5" PointX="4.625" PointY="6.625" />
-        <EntityTypeShape EntityType="HospitalDB.Diagnostico" Width="1.5" PointX="7.625" PointY="4.5" />
+        <EntityTypeShape EntityType="HospitalDB.Medicamento" Width="1.5" PointX="4.625" PointY="6.875" />
+        <EntityTypeShape EntityType="HospitalDB.Diagnostico" Width="1.5" PointX="7.625" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HospitalDB.Sintoma" Width="1.5" PointX="1.25" PointY="4.75" />
         <AssociationConnector Association="HospitalDB.ConsultaMedicamento" />
         <AssociationConnector Association="HospitalDB.ConsultaSintoma" />
         <AssociationConnector Association="HospitalDB.ConsultaDiagnostico" />
         <AssociationConnector Association="HospitalDB.PacienteConsulta" />
-        <AssociationConnector Association="HospitalDB.MedicoConsulta" />
+        <AssociationConnector Association="HospitalDB.MedicoConsulta" ManuallyRouted="true" >
+          <ConnectorPoint PointX="8.436117711907297" PointY="2.59568359375" />
+          <ConnectorPoint PointX="8.436117711907297" PointY="3.8067403594143143" />
+          <ConnectorPoint PointX="6.125" PointY="3.8067403594143143" />
+        </AssociationConnector>
         <EntityTypeShape EntityType="HospitalDB.TipoSintoma" Width="1.5" PointX="1.25" PointY="7.875" />
         <AssociationConnector Association="HospitalDB.TipoSintomaSintoma" />
         <EntityTypeShape EntityType="HospitalDB.TipoMedicamento" Width="1.5" PointX="4.625" PointY="9.75" />

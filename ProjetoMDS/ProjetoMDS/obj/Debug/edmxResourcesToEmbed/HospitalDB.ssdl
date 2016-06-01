@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HospitalDBStoreContainer">
+    <EntitySet Name="PacienteSet" EntityType="HospitalDB.Store.PacienteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MedicoSet" EntityType="HospitalDB.Store.MedicoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConsultaSet" EntityType="HospitalDB.Store.ConsultaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MedicamentoSet" EntityType="HospitalDB.Store.MedicamentoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DiagnosticoSet" EntityType="HospitalDB.Store.DiagnosticoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SintomaSet" EntityType="HospitalDB.Store.SintomaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoSintomaSet" EntityType="HospitalDB.Store.TipoSintomaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoMedicamentoSet" EntityType="HospitalDB.Store.TipoMedicamentoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoDiagnosticoSet" EntityType="HospitalDB.Store.TipoDiagnosticoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EnfermeiroSet" EntityType="HospitalDB.Store.EnfermeiroSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ConsultaMedicamento" Association="HospitalDB.Store.ConsultaMedicamento">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="Medicamento" EntitySet="MedicamentoSet" />
+    </AssociationSet>
+    <AssociationSet Name="ConsultaSintoma" Association="HospitalDB.Store.ConsultaSintoma">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="Sintoma" EntitySet="SintomaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ConsultaDiagnostico" Association="HospitalDB.Store.ConsultaDiagnostico">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="Diagnostico" EntitySet="DiagnosticoSet" />
+    </AssociationSet>
+    <AssociationSet Name="PacienteConsulta" Association="HospitalDB.Store.PacienteConsulta">
+      <End Role="Paciente" EntitySet="PacienteSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
+    <AssociationSet Name="MedicoConsulta" Association="HospitalDB.Store.MedicoConsulta">
+      <End Role="Medico" EntitySet="MedicoSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoSintomaSintoma" Association="HospitalDB.Store.TipoSintomaSintoma">
+      <End Role="TipoSintoma" EntitySet="TipoSintomaSet" />
+      <End Role="Sintoma" EntitySet="SintomaSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoDiagnosticoDiagnostico" Association="HospitalDB.Store.TipoDiagnosticoDiagnostico">
+      <End Role="TipoDiagnostico" EntitySet="TipoDiagnosticoSet" />
+      <End Role="Diagnostico" EntitySet="DiagnosticoSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoMedicamentoMedicamento" Association="HospitalDB.Store.TipoMedicamentoMedicamento">
+      <End Role="TipoMedicamento" EntitySet="TipoMedicamentoSet" />
+      <End Role="Medicamento" EntitySet="MedicamentoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PacienteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConsultaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="data" Type="datetime" Nullable="false" />
+    <Property Name="PacienteId" Type="int" Nullable="false" />
+    <Property Name="MedicoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicamentoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsultaId" Type="int" Nullable="false" />
+    <Property Name="observacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoMedicamentoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DiagnosticoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsultaId" Type="int" Nullable="false" />
+    <Property Name="observacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoDiagnosticoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SintomaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConsultaId" Type="int" Nullable="false" />
+    <Property Name="observacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoSintomaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoSintomaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sintoma" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoMedicamentoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="medicamento" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDiagnosticoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="diagnostico" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnfermeiroSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ConsultaMedicamento">
+    <End Role="Consulta" Type="HospitalDB.Store.ConsultaSet" Multiplicity="1" />
+    <End Role="Medicamento" Type="HospitalDB.Store.MedicamentoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medicamento">
+        <PropertyRef Name="ConsultaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConsultaSintoma">
+    <End Role="Consulta" Type="HospitalDB.Store.ConsultaSet" Multiplicity="1" />
+    <End Role="Sintoma" Type="HospitalDB.Store.SintomaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintoma">
+        <PropertyRef Name="ConsultaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConsultaDiagnostico">
+    <End Role="Consulta" Type="HospitalDB.Store.ConsultaSet" Multiplicity="1" />
+    <End Role="Diagnostico" Type="HospitalDB.Store.DiagnosticoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Diagnostico">
+        <PropertyRef Name="ConsultaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PacienteConsulta">
+    <End Role="Paciente" Type="HospitalDB.Store.PacienteSet" Multiplicity="1" />
+    <End Role="Consulta" Type="HospitalDB.Store.ConsultaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="PacienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MedicoConsulta">
+    <End Role="Medico" Type="HospitalDB.Store.MedicoSet" Multiplicity="1" />
+    <End Role="Consulta" Type="HospitalDB.Store.ConsultaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medico">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="MedicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoSintomaSintoma">
+    <End Role="TipoSintoma" Type="HospitalDB.Store.TipoSintomaSet" Multiplicity="1" />
+    <End Role="Sintoma" Type="HospitalDB.Store.SintomaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoSintoma">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sintoma">
+        <PropertyRef Name="TipoSintomaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoDiagnosticoDiagnostico">
+    <End Role="TipoDiagnostico" Type="HospitalDB.Store.TipoDiagnosticoSet" Multiplicity="1" />
+    <End Role="Diagnostico" Type="HospitalDB.Store.DiagnosticoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDiagnostico">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Diagnostico">
+        <PropertyRef Name="TipoDiagnosticoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoMedicamentoMedicamento">
+    <End Role="TipoMedicamento" Type="HospitalDB.Store.TipoMedicamentoSet" Multiplicity="1" />
+    <End Role="Medicamento" Type="HospitalDB.Store.MedicamentoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMedicamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medicamento">
+        <PropertyRef Name="TipoMedicamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

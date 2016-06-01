@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassePartial.cs" />
     <Compile Include="Consulta.cs">
       <DependentUpon>HospitalDB.tt</DependentUpon>
     </Compile>
@@ -66,11 +67,23 @@
     <Compile Include="Enfermeiro.cs">
       <DependentUpon>HospitalDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNovaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNovaConsulta.Designer.cs">
+      <DependentUpon>FormNovaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelecionarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecionarPaciente.Designer.cs">
+      <DependentUpon>FormSelecionarPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="HospitalDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -110,6 +123,15 @@
     <Compile Include="TipoSintoma.cs">
       <DependentUpon>HospitalDB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNovaConsulta.resx">
+      <DependentUpon>FormNovaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecionarPaciente.resx">
+      <DependentUpon>FormSelecionarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,6 +140,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="HospitalDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -152,6 +175,7 @@
       <LastGenOutput>HospitalDB.cs</LastGenOutput>
       <DependentUpon>HospitalDB.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\default-user-image.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

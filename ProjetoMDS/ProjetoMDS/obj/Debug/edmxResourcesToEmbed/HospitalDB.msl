@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HospitalDBStoreContainer" CdmEntityContainer="HospitalDBContainer">
+    <EntitySetMapping Name="PacienteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Paciente)">
+        <MappingFragment StoreEntitySet="PacienteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Medico)">
+        <MappingFragment StoreEntitySet="MedicoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Consulta)">
+        <MappingFragment StoreEntitySet="ConsultaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="PacienteId" ColumnName="PacienteId" />
+          <ScalarProperty Name="MedicoId" ColumnName="MedicoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicamentoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Medicamento)">
+        <MappingFragment StoreEntitySet="MedicamentoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ConsultaId" ColumnName="ConsultaId" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="TipoMedicamentoId" ColumnName="TipoMedicamentoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiagnosticoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Diagnostico)">
+        <MappingFragment StoreEntitySet="DiagnosticoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ConsultaId" ColumnName="ConsultaId" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="TipoDiagnosticoId" ColumnName="TipoDiagnosticoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SintomaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Sintoma)">
+        <MappingFragment StoreEntitySet="SintomaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ConsultaId" ColumnName="ConsultaId" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="TipoSintomaId" ColumnName="TipoSintomaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoSintomaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.TipoSintoma)">
+        <MappingFragment StoreEntitySet="TipoSintomaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="sintoma" ColumnName="sintoma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoMedicamentoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.TipoMedicamento)">
+        <MappingFragment StoreEntitySet="TipoMedicamentoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="medicamento" ColumnName="medicamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDiagnosticoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.TipoDiagnostico)">
+        <MappingFragment StoreEntitySet="TipoDiagnosticoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnfermeiroSet">
+      <EntityTypeMapping TypeName="IsTypeOf(HospitalDB.Enfermeiro)">
+        <MappingFragment StoreEntitySet="EnfermeiroSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
